@@ -8,16 +8,11 @@ export const options = {
   systemTags: ['status', 'method', 'url', 'error', 'scenario'],
   scenarios: {
     breakpoint: {
-      executor: 'ramping-arrival-rate',
-      startRate: 300,
-      timeUnit: '1m',
-      preAllocatedVUs: 300,
-      stages: [
-      { target: 3000, duration: '1m' },
-      { target: 6000, duration: '2m' },
-      { target: 10000, duration: '4m' },
-      { target: 60, duration: '2m' },
-      ],
+      executor: 'ramping-vus',
+      startVUs: 0,
+          stages: [
+              { duration: '30m', target: 3000 }
+          ]
     }
   },
 };
